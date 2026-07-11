@@ -159,15 +159,15 @@ export default function ProductsManagementPage() {
 
   // ✅ Get categories from Firestore + product categories
   const availableCategories = useMemo(() => {
-    const productCategories = [...new Set(products.map(p => p.category))].filter(Boolean)
+   const productCategories = Array.from(new Set(products.map(p => p.category))).filter(Boolean)
     // Merge Firestore categories with product categories, remove duplicates
-    const allCats = [...new Set([...productCategories, ...categories])].sort()
+    const allCats = Array.from(new Set([...productCategories, ...categories])).sort()
     console.log("📋 Available categories:", allCats)
     return allCats
   }, [categories, products])
 
   // Get unique brands from products
-  const availableBrands = [...new Set(products.map(p => p.brand))].sort()
+  const availableBrands = Array.from(new Set(products.map(p => p.brand))).sort()
 
   // Filter and sort products
   const filteredProducts = useMemo(() => {

@@ -56,7 +56,7 @@ export function PopularCategoriesSection() {
   const categories = useMemo(() => {
     // If products are loaded and have categories, use them
     if (products && products.length > 0) {
-      const uniqueCategories = [...new Set(products.map(p => p.category))].filter(Boolean);
+      const uniqueCategories = Array.from(new Set(products.map(p => p.category))).filter(Boolean);
       
       if (uniqueCategories.length > 0) {
         return uniqueCategories.map((cat, index) => ({

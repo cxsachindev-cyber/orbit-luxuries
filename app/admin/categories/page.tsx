@@ -74,7 +74,7 @@ export default function AdminCategoriesPanel() {
   // DYNAMIC: Build categories from actual products
   useEffect(() => {
     if (products.length > 0) {
-      const uniqueCategories = [...new Set(products.map(p => p.category))].filter(Boolean)
+      const uniqueCategories = Array.from(new Set(products.map(p => p.category))).filter(Boolean)
       
       const dynamicCategories: Category[] = uniqueCategories.map((categoryName, index) => {
         const productCount = products.filter(p => p.category === categoryName).length
