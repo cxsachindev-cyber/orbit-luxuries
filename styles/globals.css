@@ -1,0 +1,145 @@
+/* styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark Theme Core Variables */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
+    --primary: 43 74% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 43 74% 54%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 43 74% 54%;
+    --radius: 0.25rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-luxe-black text-white antialiased;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ✅ ADMIN PAGE FIXES - Plain CSS, no @apply */
+body.admin-page {
+  background-color: #f8f9fc !important;
+  color: #111827 !important;
+}
+
+body.admin-page .text-gray-900 {
+  color: #111827 !important;
+}
+
+body.admin-page .text-gray-800 {
+  color: #1f2937 !important;
+}
+
+body.admin-page .text-gray-700 {
+  color: #374151 !important;
+}
+
+body.admin-page .text-gray-600 {
+  color: #4b5563 !important;
+}
+
+body.admin-page .text-gray-500 {
+  color: #6b7280 !important;
+}
+
+body.admin-page .text-gray-400 {
+  color: #9ca3af !important;
+}
+
+body.admin-page .text-gray-300 {
+  color: #d1d5db !important;
+}
+
+body.admin-page .text-black {
+  color: #000000 !important;
+}
+
+body.admin-page .text-white {
+  color: #ffffff !important;
+}
+
+body.admin-page .bg-white {
+  background-color: #ffffff !important;
+}
+
+body.admin-page .bg-gray-50 {
+  background-color: #f9fafb !important;
+}
+
+body.admin-page .bg-gray-100 {
+  background-color: #f3f4f6 !important;
+}
+
+body.admin-page .bg-gray-200 {
+  background-color: #e5e7eb !important;
+}
+
+body.admin-page .border-gray-100 {
+  border-color: #f3f4f6 !important;
+}
+
+body.admin-page .border-gray-200 {
+  border-color: #e5e7eb !important;
+}
+
+body.admin-page input,
+body.admin-page select,
+body.admin-page textarea {
+  color: #111827 !important;
+}
+
+body.admin-page input::placeholder,
+body.admin-page textarea::placeholder {
+  color: #9ca3af !important;
+}
+
+body.admin-page label {
+  color: #4b5563 !important;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
